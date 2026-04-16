@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Residences | O tempo é o novo luxo</title>
+<title>KZA KANSAS Residences | O tempo é o novo luxo</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Cinzel:wght@300;400;500&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
   :root {
-    --navy:#1A2B4A;
+    --navy:#DFE9FB;
     --navy-deep:#0E1B30;
-    --navy-mid:#243352;
+    --navy-mid:#1C2B41;
     --gold:#C89428;
     --gold-light:#E8C870;
     --gold-soft:#D4AA50;
@@ -157,9 +157,32 @@
 
   /* ── ABOUT ── */
   .about { background:var(--navy); display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
-  .about-text p { font-size:clamp(13px,1.5vw,15px); line-height:2.1; color:var(--white-dim); margin-top:24px; }
+  .about-text p { font-size:clamp(13px,1.5vw,15px); line-height:2.1; color:rgba(14,27,48,0.72); margin-top:24px; }
   .about-text p+p { margin-top:16px; }
   .about-gold-line { width:60px; height:1px; background:var(--gold); margin:28px 0; }
+
+  /* ── TEXT OVERRIDES em fundos claros (--navy = #EEF2F8) ── */
+  .about .section-title,
+  .regions-inner .section-title { color:var(--navy-deep); }
+
+  .contact-form h3 { color:var(--navy-deep) !important; }
+  .contact-form .form-group input,
+  .contact-form .form-group select,
+  .contact-form .form-group textarea { color:var(--navy-deep); border-bottom-color:rgba(14,27,48,0.2); }
+  .contact-form .form-group input::placeholder,
+  .contact-form .form-group textarea::placeholder { color:rgba(14,27,48,0.38); }
+  .contact-form .form-group select option { background:var(--navy-deep); color:var(--white); }
+
+  .faq.alt .section-title { color:var(--navy-deep); }
+  .faq.alt .faq-question { color:var(--navy-deep); }
+  .faq.alt .faq-question:hover { color:var(--gold-dark); }
+  .faq.alt .faq-item.open .faq-question { color:var(--gold-dark); }
+  .faq.alt .faq-answer p { color:rgba(14,27,48,0.7); }
+  .faq.alt .faq-item { border-bottom-color:rgba(14,27,48,0.12); }
+  .faq.alt .faq-item:first-child { border-top-color:rgba(14,27,48,0.12); }
+  .faq.alt .faq-icon { color:var(--gold-dark); border-color:rgba(200,148,40,0.4); }
+  .faq.alt .faq-item.open .faq-icon { background:rgba(200,148,40,0.12); border-color:var(--gold-dark); }
+  .obra .section-title { color:#EEF2F8; }
 
   /* Arch image frame */
   .about-image { position:relative; height:clamp(340px,52vw,620px); display:flex; justify-content:flex-end; }
@@ -175,7 +198,7 @@
     border-radius:9999px 9999px 0 0;
     overflow:hidden;
     background:url('https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&w=600&q=80') center/cover;
-    border:4px solid var(--navy);
+    border:4px solid var(--navy-mid);
   }
   .creci { display:inline-block; font-size:9px; letter-spacing:2px; color:var(--gold); border:1px solid rgba(200,148,40,0.3); padding:5px 12px; margin-top:22px; font-family:'Cinzel',serif; }
 
@@ -230,6 +253,9 @@
   .region-name { font-family:'Playfair Display',serif; font-size:clamp(18px,2.3vw,26px); font-weight:400; color:var(--white); margin-bottom:4px; }
   .region-poi { font-size:10px; color:var(--gold-soft); margin-bottom:6px; font-style:italic; }
   .region-count { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--silver); font-family:'Cinzel',serif; }
+  .region-esgotado { position:absolute; inset:0; background:rgba(80,90,110,0.78); backdrop-filter:blur(5px); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.35s ease; border-radius:inherit; z-index:3; }
+  .region-item:hover .region-esgotado, .region-item.tapped .region-esgotado { opacity:1; }
+  .esgotado-label { font-family:'Cinzel',serif; font-size:clamp(14px,2vw,20px); letter-spacing:6px; text-transform:uppercase; color:var(--white); border:1px solid rgba(247,246,244,0.55); padding:12px 28px; }
 
   /* ── MANIFESTO ── */
   .manifesto { background:var(--navy-mid); position:relative; overflow:hidden; padding:clamp(80px,12vw,140px) var(--pad); }
@@ -247,7 +273,7 @@
 
   /* ── CONTACT ── */
   .contact { background:var(--navy); display:grid; grid-template-columns:1fr 1fr; gap:0; padding:0; }
-  .contact-info { padding:clamp(60px,10vw,140px) clamp(30px,5vw,80px) clamp(60px,10vw,140px) var(--pad); background:var(--navy-mid); }
+  .contact-info { padding:clamp(60px,10vw,140px) clamp(30px,5vw,80px) clamp(60px,10vw,140px) var(--pad); background:#0B1929; }
   .contact-info p { font-size:clamp(13px,1.5vw,15px); line-height:2.1; color:var(--white-dim); margin-top:24px; margin-bottom:44px; }
   .contact-detail { display:flex; flex-direction:column; gap:24px; margin-bottom:44px; }
   .contact-item { display:flex; align-items:flex-start; gap:18px; padding-bottom:24px; border-bottom:1px solid rgba(155,163,173,0.12); }
@@ -405,13 +431,8 @@
 <!-- NAV -->
 <nav id="navbar">
   <a href="#" class="nav-logo">
-    <svg class="logo-icon" viewBox="0 0 70 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4 4 C18 4, 30 24, 35 26 C30 28, 18 48, 4 48" stroke="#C89428" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-      <path d="M66 4 C52 4, 40 24, 35 26 C40 28, 52 48, 66 48" stroke="#C89428" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-      <path d="M12 10 C22 10, 32 24, 35 26 C32 28, 22 42, 12 42" stroke="#C89428" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.6"/>
-      <path d="M58 10 C48 10, 38 24, 35 26 C38 28, 48 42, 58 42" stroke="#C89428" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.6"/>
-    </svg>
     <div class="logo-text">
+      <span class="logo-kza">KZA KANSAS</span>
       <span class="logo-residences" style="font-size:clamp(10px,1.4vw,14px);letter-spacing:6px;">Residences</span>
     </div>
   </a>
@@ -464,13 +485,13 @@
   <div class="arch" style="width:clamp(50px,7vw,90px);height:clamp(120px,18vw,220px);background:#C89428;"></div>
   <div class="arch" style="width:clamp(50px,7vw,90px);height:clamp(110px,16vw,200px);background:#B07A20;"></div>
   <div class="arch" style="width:clamp(50px,7vw,90px);height:clamp(100px,14vw,180px);background:#9A6A18;"></div>
-  <div class="arch" style="width:clamp(50px,7vw,90px);height:clamp(90px,12vw,160px);background:#E8E8EC;"></div>
+  <div class="arch" style="width:clamp(50px,7vw,90px);height:clamp(90px,12vw,160px);background:var(--navy);"></div>
 </div>
 
 <!-- ABOUT -->
 <section class="about" id="sobre">
   <div class="about-text reveal">
-    <div class="section-tag">Residences</div>
+    <div class="section-tag">KZA KANSAS</div>
     <h2 class="section-title">Onde cada minuto<br>é <em>vivido</em>, não perdido.</h2>
     <div class="about-gold-line"></div>
     <p>Em São Paulo, o maior ativo não é o metro quadrado — é o tempo. Nasceu dessa convicção: residências cuidadosamente posicionadas para que você chegue ao trabalho, ao Einstein, ao Ibirapuera e ao Eataly sem abrir mão do que construiu.</p>
@@ -567,7 +588,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-question">Como é garantida a confidencialidade no atendimento?<i class="faq-icon">+</i></button>
-        <div class="faq-answer"><p>A discrição é um pilar inegociável do nosso trabalho. Todos os consultores assinam acordos de confidencialidade, e as informações sobre clientes e transações são tratadas com o mesmo cuidado de uma assessoria de private banking. Nenhum dado é compartilhado sem sua autorização expressa.</p></div>
+        <div class="faq-answer"><p>A discrição é um pilar inegociável do nosso trabalho. Todos os parceiros responsáveis assinam acordos de confidencialidade, e as informações sobre clientes e transações são tratadas com o mesmo cuidado de uma assessoria de private banking. Nenhum dado é compartilhado sem sua autorização expressa.</p></div>
       </div>
     </div>
   </div>
@@ -660,61 +681,67 @@
 <section class="regions" id="regioes">
   <div class="regions-inner reveal">
     <div class="section-tag">Onde Estamos</div>
-    <h2 class="section-title">Bairros que colocam<br>São Paulo ao seu <em>alcance.</em></h2>
+    <h2 class="section-title">KZA está nos melhores lugares<br>de São Paulo ao seu <em>alcance.</em></h2>
   </div>
   <div class="regions-scroll">
     <div class="region-item">
       <div class="region-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=600&q=80')"></div>
+      <div class="region-esgotado"><span class="esgotado-label">Esgotado</span></div>
       <div class="region-overlay">
         <div class="region-line"></div>
-        <div class="region-name">Itaim Bibi</div>
-        <div class="region-poi">Epicentro da Faria Lima</div>
-        <div class="region-count">Fintechs · Private Equity · Fine Dining</div>
-      </div>
-    </div>
-    <div class="region-item">
-      <div class="region-bg" style="background-image:url('https://images.unsplash.com/photo-1464082354059-27db6ce50048?auto=format&fit=crop&w=600&q=80')"></div>
-      <div class="region-overlay">
-        <div class="region-line"></div>
-        <div class="region-name">Jardins</div>
-        <div class="region-poi">Cultura, gastronomia e negócios</div>
-        <div class="region-count">MASP · Haddock Lobo · Oscar Freire</div>
-      </div>
-    </div>
-    <div class="region-item">
-      <div class="region-bg" style="background-image:url('https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=600&q=80')"></div>
-      <div class="region-overlay">
-        <div class="region-line"></div>
-        <div class="region-name">Vila Olímpia</div>
-        <div class="region-poi">Hub tecnológico e corporativo</div>
-        <div class="region-count">Berrini · WTC · JK Iguatemi</div>
-      </div>
-    </div>
-    <div class="region-item">
-      <div class="region-bg" style="background-image:url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80')"></div>
-      <div class="region-overlay">
-        <div class="region-line"></div>
-        <div class="region-name">Moema</div>
-        <div class="region-poi">Qualidade de vida sem abrir mão de nada</div>
-        <div class="region-count">Ibirapuera · Einstein · Congonhas</div>
+        <div class="region-name">KZA Campo Belo</div>
+        <div class="region-poi">Campo Belo · R. Princesa Isabel, 1407</div>
+        <div class="region-count">11 Unidades · Agosto 2021</div>
       </div>
     </div>
     <div class="region-item">
       <div class="region-bg" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80')"></div>
+      <div class="region-esgotado"><span class="esgotado-label">Esgotado</span></div>
       <div class="region-overlay">
         <div class="region-line"></div>
-        <div class="region-name">Pinheiros</div>
-        <div class="region-poi">A São Paulo que inspira</div>
-        <div class="region-count">Fradique · Metrô · Sírio-Libanês</div>
+        <div class="region-name">KZA Princesa Isabel</div>
+        <div class="region-poi">Campo Belo · R. Princesa Isabel, 1471</div>
+        <div class="region-count">10 Unidades · Setembro 2022</div>
+      </div>
+    </div>
+    <div class="region-item">
+      <div class="region-bg" style="background-image:url('https://images.unsplash.com/photo-1464082354059-27db6ce50048?auto=format&fit=crop&w=600&q=80')"></div>
+      <div class="region-esgotado"><span class="esgotado-label">Esgotado</span></div>
+      <div class="region-overlay">
+        <div class="region-line"></div>
+        <div class="region-name">KZA Vila Mariana</div>
+        <div class="region-poi">Vila Mariana · Av. Cons. Rodrigues Alves, 1213</div>
+        <div class="region-count">9 Unidades · Dezembro 2024</div>
+      </div>
+    </div>
+    <div class="region-item">
+      <div class="region-bg" style="background-image:url('https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=600&q=80')"></div>
+      <div class="region-esgotado"><span class="esgotado-label">Esgotado</span></div>
+      <div class="region-overlay">
+        <div class="region-line"></div>
+        <div class="region-name">KZA Vila Olímpia</div>
+        <div class="region-poi">Vila Olímpia · Rua Casa do Ator, 621</div>
+        <div class="region-count">8 Unidades · Maio 2025</div>
+      </div>
+    </div>
+    <div class="region-item">
+      <div class="region-bg" style="background-image:url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80')"></div>
+      <div class="region-esgotado"><span class="esgotado-label">Esgotado</span></div>
+      <div class="region-overlay">
+        <div class="region-line"></div>
+        <div class="region-name">KZA Ibirapuera</div>
+        <div class="region-poi">Vila Mariana · Av. Cons. Rodrigues Alves, 1239</div>
+        <div class="region-count">17 Unidades · Previsão: Jun 2026</div>
       </div>
     </div>
     <div class="region-item">
       <div class="region-bg" style="background-image:url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=600&q=80')"></div>
+      <div class="region-esgotado"><span class="esgotado-label">Esgotado</span></div>
       <div class="region-overlay">
         <div class="region-line"></div>
-        <div class="region-name">Alto de Pinheiros</div>
-        <div class="region-poi">Casas de alto padrão e verde urbano</div>
-        <div class="region-count">Butantã · USP · City Butantã</div>
+        <div class="region-name">KZA Brooklin</div>
+        <div class="region-poi">Brooklin · Rua Pensilvânia, 359</div>
+        <div class="region-count">11 Unidades · Previsão: Jun 2026</div>
       </div>
     </div>
   </div>
@@ -838,7 +865,7 @@
   <div class="contact-info reveal">
     <div class="section-tag">Atendimento Exclusivo</div>
     <h2 class="section-title">Recupere seu<br><em>tempo.</em></h2>
-    <p>Nossos consultores especializados nos principais corredores de negócios de São Paulo estão prontos para apresentar o endereço certo para a sua rotina — com total confidencialidade.</p>
+    <p>Nossos parceiros responsáveis especializados nos principais corredores de negócios de São Paulo estão prontos para apresentar o endereço certo para a sua rotina — com total confidencialidade.</p>
     <div class="contact-detail">
       <div class="contact-item">
         <div class="contact-icon">✦</div>
@@ -856,7 +883,7 @@
   </div>
   <div class="contact-form reveal reveal-delay-2">
     <div class="section-tag">Agendar Visita</div>
-    <h3 style="font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,32px);font-weight:400;color:var(--white);margin-bottom:36px;line-height:1.2;">Fale com um<br><em style="color:var(--gold-light)">consultor</em>.</h3>
+    <h3 style="font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,32px);font-weight:400;color:var(--white);margin-bottom:36px;line-height:1.2;">Fale com um<br><em style="color:var(--gold-light)">parceiro responsável</em>.</h3>
     <div class="form-row">
       <div class="form-group"><label>Nome</label><input type="text" placeholder="Seu nome completo"></div>
       <div class="form-group"><label>Telefone</label><input type="tel" placeholder="(11) 00000-0000"></div>
@@ -890,6 +917,7 @@
           <path d="M58 10 C48 10, 38 24, 35 26 C38 28, 48 42, 58 42" stroke="#C89428" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.6"/>
         </svg>
         <div class="logo-text">
+          <span class="logo-kza">KZA KANSAS</span>
           <span class="logo-residences" style="font-size:clamp(10px,1.4vw,14px);letter-spacing:6px;">Residences</span>
         </div>
       </a>
@@ -924,7 +952,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2025 Residences. CRECI-SP 18.204-J. Todos os direitos reservados.</div>
+    <div class="footer-copy">© 2025 KZA KANSAS Residences. CRECI-SP 18.204-J. Todos os direitos reservados.</div>
     <div class="footer-socials">
       <a href="#" class="social-link">in</a>
       <a href="#" class="social-link">ig</a>
@@ -1018,6 +1046,13 @@
     });
   }, { threshold: 0.25 });
   document.querySelectorAll('#obra, .time-chart-wrap').forEach(el => barObserver.observe(el));
+
+  // Region tap (mobile esgotado toggle)
+  document.querySelectorAll('.region-item').forEach(item => {
+    item.addEventListener('touchstart', () => {
+      item.classList.toggle('tapped');
+    }, { passive: true });
+  });
 
   // FAQ accordion
   document.querySelectorAll('.faq-question').forEach(btn => {
